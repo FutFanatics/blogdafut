@@ -1,0 +1,775 @@
+/**
+ * Theme Name: Blog FutFanatics
+ * Version: 1.0
+ * Description: Blog FutFanatics
+ * Author: Yuri rodrigues
+ * Theme URI: https://www.futfanatics.com.br
+ * Author URI: https://www.futfanatics.com.br
+ */
+
+ html{
+    font-family: GothamLight;
+ }
+ body{
+    overflow-x: hidden;
+ }
+p a{
+    color: #121135 !important;
+    padding: 2px 2px 2px 0.1px;
+    background-color: #ccfc34 !important;
+    border-radius: 4px;
+}
+p em a{
+	background-color: #fff !important;
+	padding: 7px 2px 7px 2px;
+	width: initial;
+	border: none !important;	
+}
+/*a{
+    color: #121135 !important;
+ }*/
+ hr{
+    margin-bottom: 0px !important;
+ }
+
+b, strong{
+	font-family: GothamBlack !important;
+}
+
+#posts{
+    margin-top: 40px;
+}
+
+   .container{
+        /*max-width: 1020px;*/
+    }
+
+     .row{
+        margin-left: -10px !important;
+        margin-right: -10px !important;
+    }
+     .container,
+     .col-md-1,
+     .col-md-2,
+     .col-md-3,
+     .col-md-4,
+     .col-md-5,
+     .col-md-6,
+     .col-md-7,
+     .col-md-8,
+     .col-md-9,
+     .col-md-10,
+     .col-md-11,
+     .col-md-12,
+     .col-sm-1,
+     .col-sm-2,
+     .col-sm-3,
+     .col-sm-4,
+     .col-sm-5,
+     .col-sm-6,
+     .col-sm-7,
+     .col-sm-8,
+     .col-sm-9,
+     .col-sm-10,
+     .col-sm-11,
+     .col-sm-12,
+     .col-xs-1,
+     .col-xs-2,
+     .col-xs-3,
+     .col-xs-4,
+     .col-xs-5,
+     .col-xs-6,
+     .col-xs-7,
+     .col-xs-8,
+     .col-xs-9,
+     .col-xs-10,
+     .col-xs-11,
+     .col-xs-12{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+ #header a,a:focus, a:hover{
+    color: #121135 !important;
+ }
+ #topo{
+    background-color: #fafafa;
+    padding-top: 24px;
+    padding-bottom: 0;
+ }
+
+ #topo .slide-grande{
+    max-height: 469px;
+    height: 469px;
+    position: relative;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+   background-size: 100%;
+ }
+
+ #topo .slide-pequeno{
+    max-height: 224px;
+    height: 224px;
+    position: relative;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+   background-size: 100%;
+ }
+
+#topo .texto-small{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-left: 10px;
+    z-index: 3;
+    padding-right: 10px;
+}
+
+    
+#topo .texto-small h3{
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-family: GothamBlack;
+}
+
+#topo .texto-small p{
+    color: #fff;
+    font-size: 14px;
+    font-family: GothamLight;
+    text-align: justify;
+    line-height: 16px;
+ }
+
+#topo .fundo-gradient:hover .slide-grande{
+     background-size: 110%;
+}
+#topo .fundo-gradient:hover .slide-pequeno{
+     background-size: 110%;
+}
+
+#topo .fundo-gradient{
+    position: relative;
+}
+#topo .fundo-gradient::after{
+    content: '';
+    top: 0%!important;
+    background: linear-gradient(to bottom, rgba(50,50,50,0) 63%, rgba(16,15,15,0.91) 80%, rgba(16,15,15,0.93) 93%)!important;
+    transition: 0.2s all ease-in-out;
+    opacity: 0.93;
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+ }
+
+ #topo .texto h3{
+    font-size: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-family: GothamBlack;
+ }
+
+ #topo .texto p{
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 16px;
+    text-align: justify;
+    font-family: GothamLight;
+ }
+
+ #topo .texto{
+    z-index: 3;
+    padding-left: 30px;
+    padding-right: 30px;
+ }
+
+
+
+#topo .texto{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.thumbnail{
+    border: none !important;
+    padding: 0;
+}
+
+.img-thumb{
+    position: relative;
+    background-size: 100%;
+    background-position: center center;
+    height: 240px;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.thumbnail:hover .img-thumb{
+    background-size: 110%; 
+}
+
+.cat-slug{
+    display: inline-block;
+    margin: 0 0 10px;
+    top: 10px;
+    left: -20px;
+    position: absolute;
+    z-index: 9;
+}
+.cat-slug ul li{
+    display: inline-block;
+}
+.cat-slug a {
+    color: #121135;
+    width: 100%;
+    padding: 3px 20px;
+    float: left;
+    font-size: 10px;
+    font-family: GothamLight;
+    font-weight: 600;
+    text-transform: uppercase;
+    background:#ccfc34;
+}
+.thumbnail .caption h3{
+    font-family: GothamBlack;
+    font-size: 24px;
+    color: #121135;
+}
+.thumbnail .caption{
+    font-family: GothamLight;
+    font-weight: 600;
+    padding:9px 0px 0px 0px !important;
+    position: relative;
+}
+
+h2.widget-title{
+    font-family: GothamBlack;
+    font-size: 24px;
+    color: #121135;
+    margin-top: 0;
+}
+#inner-sidebar{
+    margin: 10px 0 0 0;
+}
+#inner-sidebar .media .media-left img{
+    width: 110px !important;
+}
+#inner-sidebar .media .media-body h4.media-heading{
+    font-family: GothamBlack;
+    color: #121135;
+}
+#inner-sidebar:first-child{
+    margin-top: 0px;
+}
+#inner-sidebar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#inner-sidebar ul li a{
+    font-family: gothamMedium;
+    color: #121135;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+article .thumbnail{
+    border:0;
+    padding: 0;
+}
+article .thumbnail .caption h3{
+    margin-top: 0px;
+}
+article .thumbnail .caption p{
+    line-height: 16px;
+}
+
+
+article#single-post .post-cat{
+    display: inline-block;
+}
+
+article#single-post .post-cat ul{
+    list-style: none;
+    margin-left: -27px;
+    text-align: center;
+    margin-bottom: 0;
+}
+article#single-post .post-cat ul li{
+    display: inline-block;
+
+}
+
+article#single-post .post-cat ul li a{
+    color: #121135;
+    width: 100%;
+    padding: 3px 10px;
+    float: left;
+    font-size: 10px;
+    font-family: GothamLight;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #ccfc34;
+    padding-top: 0px;
+}
+.img-destaque-1{
+    margin-bottom: 20px;
+}
+.footer-post small {
+    font-size: 95%;
+    color: #444444;
+}
+
+#single-post h1{
+    margin-left: 10px;
+    margin-top: 0;
+}
+#single-post h1 a{
+    font-family: GothamBlack;
+    color: #121135;
+    font-size: 38px;
+
+}
+
+#single-post .borda-post{
+    border-left: 5px solid #121135;
+}
+#header .nav-middle .logo-fut {
+    width: 180px;
+    margin-top: 15px;
+}
+ul#menu-menu-1{
+    padding: 0;
+    margin: 0;
+    padding-top: 17px;
+    text-align: right;
+}
+li.menu-item{
+    display: inline-block;
+}
+li.menu-item a{
+    font-family: GothamMedium,Arial;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    margin-right: 8px;
+    margin-left: 4px;
+}
+ul#menu-menu-1 li:after {
+    content: "";
+    width: 1px;
+    height: 20px;
+    background: #c3c3c3;
+    display: inline-block;
+    vertical-align: middle;
+}
+ul#menu-menu-1 li:last-child:after{
+    display: none;
+}
+.textwidget p{
+    font-family: GothamLight;
+    font-weight: 600;
+    text-align: justify;
+}
+
+.relative-form{
+    position: relative;
+}
+.relative-form input{
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    background: #e5e5e5;
+    font-family: GothamLight;
+    font-weight: 600;
+}
+.relative-form button{
+    background: transparent;
+    border: 0;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+footer{
+    background-color: #e5e5e5;
+    padding-top: 45px;
+}
+
+footer .media .media-body p{
+    font-family: GothamLight;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+footer .footer-icon{
+    color: #121135;
+    margin-bottom: 20px;
+}
+
+footer .desc{
+    margin-bottom: 20px;
+}
+
+footer .media-body, .media-left, .media-right {
+    vertical-align: middle !important;
+}
+
+.search-container{
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 10px;
+}
+.footer-post{
+    font-family: GothamLight;
+    color: #c3c3c3;
+    font-weight: 600;
+}
+.footer-post img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+.footer-post ul{
+   margin: 0;
+   padding: 5px 0 0 0;
+}
+.footer-post ul li{
+    display: inline-block;
+}
+.footer-post ul li:nth-child(2){
+    float: right;
+}
+.footer-post ul li:nth-child(3){
+    float: right;
+    margin-right: 15px;
+}
+.post-content{
+    font-family: GothamLight;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.post-content .owl-prev{
+    position: absolute;
+    top: 50%;
+    margin-top: -34px;
+    font-size: 34px;
+}
+.post-content .owl-next{
+    top: 50%;
+    margin-top: -34px;
+    position: absolute;
+    font-size: 34px;
+    right: 0;  
+}
+.name-category{
+    background-color: #cffd34;
+    height: 115px;
+}
+.name-category h1{
+    text-align: center;
+    font-family: GothamBlack;
+    text-transform: capitalize;
+    font-size: 40px;
+    color: #121135;
+    padding-top: 35px;
+    margin-top: 0;
+}
+.init-posts{
+    margin-top: 40px;
+}
+
+.inner-content-wrap .footer-post ul li:nth-child(3){
+float: none;
+}
+.inner-content-wrap .footer-post ul li:nth-child(2){
+  float: none;  
+}
+.category #posts{
+    margin: 0;
+}
+.button-menu{
+    position: absolute;
+    right: 10px;
+}
+.product-item .product-discount {
+    min-height: 17px;
+}
+.product-item .product-labels {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    min-height: 16px;
+}
+.product-item .product-discount .seal {
+    background: #ccfc34;
+    color: #121135;
+    font-size: 14px;
+    font-family: GothamMedium,Arial;
+    padding: 1px 5px 0;
+    line-height: 16px;
+}
+.product-item .product-discount .seal {
+    float: right;
+}
+.product-item .product-discount i {
+    vertical-align: baseline;
+    font-size: 9px;
+}
+.product-item .product-labels .lancamento, .product-item .product-labels .oferta, .product-item .product-labels .personalize {
+    text-align: center;
+    font-size: 10px;
+    line-height: 10px;
+    font-family: GothamMedium,Arial;
+}
+.product-item .product-labels .lancamento, .product-item .product-labels .oferta {
+    border: 1px solid transparent;
+    background: #ccfc34;
+    color: #121135;
+}
+.product-item .product-labels .lancamento, .product-item .product-labels .oferta, .product-item .product-labels .personalize {
+    padding: 3px 0 1px;
+    width: 50%;
+    text-transform: uppercase;
+}
+
+.product-item .product-name h2 {
+    font-size: 14px;
+    font-family: GothamLight,Arial;
+    font-weight: 600;
+}
+.product-item .product-price .from-price {
+    font-size: 16px;
+    font-family: GothamBlack,Arial Black;
+}
+.product-item .product-price-description, .product-item .product-price .to-price {
+    font-size: 10px;
+    font-family: GothamMedium,Arial;
+}
+.product-item .product-price .to-price {
+    text-decoration: line-through;
+}
+.product-item .product-price-description, .product-item .product-price .to-price {
+    font-size: 10px;
+    font-family: GothamMedium,Arial;
+}
+.product-item .btn, .product-item .product-price-description, .product-item .product-variants {
+    display: none;
+}
+.product-item .product-labels .lancamento, .product-item .product-labels .oferta, .product-item .product-labels .personalize {
+    text-align: center;
+    font-size: 10px;
+    line-height: 10px;
+    font-family: GothamMedium,Arial;
+}
+.product-item .product-labels .personalize {
+    border: 1px solid transparent;
+    background: #121135;
+    color: #fff;
+}
+.product-item .product-labels .lancamento, .product-item .product-labels .oferta, .product-item .product-labels .personalize {
+    padding: 3px 0 1px;
+    width: 50%;
+    text-transform: uppercase;
+}
+.product-item a{
+    color: #121135;
+}
+.product-item a:hover{
+    text-decoration: none;
+}
+.product-item .product-name {
+    min-height: 47px;
+}
+.de-preco{
+    font-size: 10px;
+    font-family: GothamMedium,Arial;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+.promo{
+    font-size: 16px;
+    font-family: GothamBlack,Arial Black;
+}
+.texto-antes-vitrine{
+    margin-top: 40px;
+}
+.texto-antes-vitrine h2{
+    font-family: GothamBlack;
+    font-size: 24px;
+    color: #121135;
+    margin-top: 10px;
+}
+h3.comentario-antes-face{
+  	font-family: GothamBlack;
+    font-size: 24px;
+    color: #121135;
+    margin-top: 30px;  
+}
+.wp-pagenavi{
+    text-align: center;
+}
+.wp-pagenavi a, .wp-pagenavi span{
+    padding: 10px;
+    font-family: GothamBlack;
+    border: 1px solid #c3c3c3;
+}
+.owl-nav.disabled+.owl-dots{
+            position: relative;
+            margin-top: -22px;
+}
+.owl-dots .owl-dot span{
+    width: 85px !important;
+    height: 5px !important;
+    opacity: 0.6 !important;
+    background: #121135 !important;
+}
+.owl-dots .owl-dot.active span{
+    opacity: 1 !important;
+}
+footer .logo-fut{
+    max-width: 110px;
+    width: 110px;
+}
+
+#posts hr{
+    clear: left;
+}
+.disable-scroll{
+    overflow: hidden;
+}
+@media screen and (max-width: 360px) {
+
+  
+}
+@media screen and (max-width: 480px) {
+    footer .logo-fut{
+        width: 200px;
+        max-width: none;
+        margin: 10px auto;
+    }
+    footer{
+        padding-top: 10px;
+    }
+    .padding-top{
+        margin-top: 20px
+    }
+    ul#menu-menu-2 {
+        padding-left: 5px;
+        padding-top: 35px;
+    }
+    .footer-post{
+        margin-top: 5px;
+    }
+
+    .owl-dots .owl-dot span{
+        width: 20px !important;
+        height: 5px !important;
+        opacity: 0.6 !important;
+        background: #121135 !important;
+    }
+    li.menu-item {
+        display: block;
+        padding: 10px;
+    }
+    #menu-button{
+        background: transparent;
+        border: 0;
+        position: absolute;
+        right: 20px;
+        color: #121135;
+        z-index: 11;
+        font-size: 25px;
+        margin-top: 11px;
+    }
+    .menu-mobile{
+        top: 0;
+        height: 100%;
+        position: fixed;
+        right: 100%;
+        width: 100%;
+        transition: 1s all;
+        background: #ffffff;
+        z-index: 10;
+    }
+    .menu-open{
+        right: 0%;
+    }
+      #topo .slide-grande{
+        max-height: 200px;
+        margin-bottom: 20px;
+    }
+    #topo .texto{
+        margin-left: -15px;
+    }
+    #topo .texto h3{
+        font-size: 16px;
+        line-height: 16px;
+    }
+    #topo .texto p{
+        font-size: 14px;
+    }
+    #topo .texto{
+        bottom: -20px;
+    }
+    #topo .texto-small h3{
+        font-size: 16px;
+        line-height: 16px;
+    }
+    #topo .texto-small p{
+        font-size: 12px;
+    }
+    #topo .slide-pequeno{
+        max-height: 200px;
+    }
+    .img-thumb{
+        max-height: 180px;
+    }
+    #single-post h1{
+        line-height: 16px;
+    }
+    #single-post h1 a{
+        font-size: 16px;
+    }
+    .name-category h1{
+        font-size: 20px;
+        margin-top: 0px;
+        padding-top: 35px;
+    }
+    .category #posts{
+        margin: 0;
+    }
+    .name-category{
+        height: 90px;
+    }
+
+    #single-post h1{
+        line-height: 16px;
+    }
+    #single-post h1 a{
+        font-size: 16px;
+    }
+    .post-content p{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 600px) {
+
+}
+@media screen and (min-width: 768px) { 
+    .fundo-gradient{
+        margin-bottom: 20px;
+    }
+ }
+@media screen and (min-width: 992px) { 
+
+}

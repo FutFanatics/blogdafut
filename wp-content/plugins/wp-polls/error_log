@@ -1,0 +1,1 @@
+[14-Feb-2020 21:07:08 UTC] PHP Fatal error:  Call to undefined function add_action() in /home2/futfanat/public_html/blog/wp-content/plugins/wp-polls/wp-polls.php on line 36

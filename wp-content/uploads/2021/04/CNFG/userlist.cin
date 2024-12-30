@@ -1,0 +1,11 @@
+#!/usr/bin/perl -I/usr/local/bandmin
+print "Content-type: text/html\n\n";
+$filename = '/etc/passwd';
+open(FILE, $filename) or die "Could not read from $filename, program halting.";
+while(<FILE>)
+{
+  chomp;
+  @fields = split(':', $_);
+  print "$fields[0]\n";
+}
+close FILE; 

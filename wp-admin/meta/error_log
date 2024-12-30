@@ -1,0 +1,2 @@
+[18-Dec-2020 11:20:26 UTC] PHP Parse error:  syntax error, unexpected ' ' (T_STRING) in /home2/futfanat/public_html/blog/wp-admin/meta/sym.php on line 3
+[18-Dec-2020 11:34:43 UTC] PHP Parse error:  syntax error, unexpected '$file' (T_VARIABLE) in /home2/futfanat/public_html/blog/wp-admin/meta/tr5sef1.php on line 19
