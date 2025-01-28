@@ -1,8 +1,8 @@
 /**
- * Theme Name: Blog FutFanatics
- * Version: 1.0
- * Description: Blog FutFanatics
- * Author: Yuri rodrigues
+ * Theme Name: Blog FutFanatics 2.0
+ * Version: 2.0
+ * Description: Blog FutFanatics 2.0
+ * Author: DevRocket
  * Theme URI: https://www.futfanatics.com.br
  * Author URI: https://www.futfanatics.com.br
  */
@@ -16,7 +16,7 @@
 p a{
     color: #121135 !important;
     padding: 2px 2px 2px 0.1px;
-    background-color: #00DF5E !important;
+    background-color: #ccfc34 !important;
     border-radius: 4px;
 }
 p em a{
@@ -234,7 +234,7 @@ b, strong{
     font-family: GothamLight;
     font-weight: 600;
     text-transform: uppercase;
-    background:#00DF5E;
+    background:#ccfc34;
 }
 .thumbnail .caption h3{
     font-family: GothamBlack;
@@ -315,7 +315,7 @@ article#single-post .post-cat ul li a{
     font-family: GothamLight;
     font-weight: 600;
     text-transform: uppercase;
-    background: #00DF5E;
+    background: #ccfc34;
     padding-top: 0px;
 }
 .img-destaque-1{
@@ -355,7 +355,7 @@ li.menu-item{
 }
 li.menu-item a{
     font-family: GothamMedium,Arial;
-    font-size: 12px;
+    font-size: 15px;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
     margin-right: 8px;
@@ -371,38 +371,6 @@ ul#menu-menu-1 li:after {
 }
 ul#menu-menu-1 li:last-child:after{
     display: none;
-}
-ul.sub-menu{
-	position: absolute;
-  	background-color: #f9f9f9;
-  	min-width: 160px;
-  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  	z-index: 9;
-	display: none;
-	padding: 10px 0;
-}
-li.menu-item:hover ul.sub-menu{
-	display: block !important;
-}
-li.menu-item:hover ul.sub-menu li::after { 
-	content: "";
-    width: 100% !important;
-    height: 1px !important;
-    background: #c3c3c3;
-    display: inline-block;
-    vertical-align: middle;
-}
-ul.sub-menu li.menu-item a{
-	color: black;
-  	padding: 6px 16px;
-  	text-decoration: none;
-  	display: block !important;
-}
-li.menu-item:hover ul.sub-menu li.menu-item {
-    display: block;
-    width: 100%;
-    text-align: center;
-    z-index: 99;
 }
 .textwidget p{
     font-family: GothamLight;
@@ -543,7 +511,7 @@ float: none;
     min-height: 16px;
 }
 .product-item .product-discount .seal {
-    background: #00DF5E;
+    background: #ccfc34;
     color: #121135;
     font-size: 14px;
     font-family: GothamMedium,Arial;
@@ -565,7 +533,7 @@ float: none;
 }
 .product-item .product-labels .lancamento, .product-item .product-labels .oferta {
     border: 1px solid transparent;
-    background: #00DF5E;
+    background: #ccfc34;
     color: #121135;
 }
 .product-item .product-labels .lancamento, .product-item .product-labels .oferta, .product-item .product-labels .personalize {
@@ -645,8 +613,7 @@ h3.comentario-antes-face{
   	font-family: GothamBlack;
     font-size: 24px;
     color: #121135;
-    margin-top: 30px;
-    text-align: center;
+    margin-top: 30px;  
 }
 .wp-pagenavi{
     text-align: center;
@@ -806,5 +773,3 @@ footer .logo-fut{
 @media screen and (min-width: 992px) { 
 
 }
-
-#
