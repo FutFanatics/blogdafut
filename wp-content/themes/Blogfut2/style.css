@@ -1509,7 +1509,7 @@ footer .diretrizes{
     margin-bottom: 40px;
 }
 
-#newsletter .box-newletter .box-newletter-content input[type="email"], #newsletter .box-newletter .box-newletter-content select{
+#newsletter .box-newletter .box-newletter-content input[type="email"],#newsletter .box-newletter .box-newletter-content input[type="text"], #newsletter .box-newletter .box-newletter-content select{
     border: none;
     background-color: transparent;
     border-bottom: 1px solid #686a72;
@@ -1517,7 +1517,8 @@ footer .diretrizes{
     color: #686a72;
 }
 
-#newsletter .box-newletter .box-newletter-content input[type="email"]:focus:focus-visible, #newsletter .box-newletter .box-newletter-content select:focus:focus-visible{
+#newsletter .box-newletter .box-newletter-content input[type="email"]:focus:focus-visible, 
+#newsletter .box-newletter .box-newletter-content input[type="text"]:focus:focus-visible,#newsletter .box-newletter .box-newletter-content select:focus:focus-visible{
     outline: none;
 }
 
@@ -1532,7 +1533,6 @@ footer .diretrizes{
 #newsletter .box-newletter .box-newletter-content select:focus{
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M7 10l5 5 5-5z" transform="rotate(180 12 12)"/></svg>');
 }
-
 
 #newsletter .box-newletter .box-newletter-content .box-politica-privacidade{
     display: flex;
@@ -1575,9 +1575,13 @@ footer .diretrizes{
     margin-bottom: 0;
 }
 
-#newsletter .box-newletter .box-newletter-content button[type="submit"]{
+#newsletter .box-newletter .box-newletter-content .box-politica-privacidade label[for="ck-politica-privacidade"] a {
+    color: #21222D;
+}
+
+#newsletter .box-newletter .box-newletter-content input[type="submit"]{
     width: 248px;
-    margin: 50px auto 0;
+    margin: 0px auto 0;
     background-color: #192c53;
     color: #FFFFFF;
     border-radius: 50px;
@@ -1619,7 +1623,7 @@ footer .diretrizes{
         max-width: 250px;
     }
 
-    #newsletter .box-newletter .box-newletter-content button[type="submit"] {
+    #newsletter .box-newletter .box-newletter-content input[type="submit"] {
         margin: 20px auto 0;
     }
 

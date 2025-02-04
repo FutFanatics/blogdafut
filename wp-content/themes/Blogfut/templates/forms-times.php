@@ -455,9 +455,11 @@ if ($form != 'none') {
                             <div class="form-group col-xs-12 col-sm-6">
                                 <input type="text" name="cmp2"  placeholder="Seu Nome*" class="form-control" maxlength="80" required="required" />
                             </div>
+                            
                             <div class="form-group col-xs-12 col-sm-6">
                                 <input type="text" name="cmp1"  placeholder="Seu E-mail*" class="form-control" maxlength="80" required="required" />
                             </div>
+
                             <div class="form-group col-xs-12 col-sm-6">
                                 <select name="cmp12" class="form-control select-single" data-placeholder="Time do Coração*" required="required">
                                     <option value="">Time do Coração*</option>
@@ -566,6 +568,7 @@ if ($form != 'none') {
                                 </select>
                                 <input type="hidden" name="cmp12_action" value="replacement" />
                             </div>
+
                             <div class="form-group col-xs-12 col-sm-6">
                                 <div class="buttons">
                                     <button type="submit">Cadastrar<span class="glyphicon glyphicon-chevron-right"></span></button>

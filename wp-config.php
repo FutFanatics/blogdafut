@@ -25,13 +25,13 @@ define('WP_AUTO_UPDATE_CORE', 'minor');// This setting is required to make sure 
 define('DB_NAME', 'futfanatics01');
 
 /** Usuário do banco de dados MySQL */
-define('DB_USER', 'futfanatics01');
+define('DB_USER', 'root');
 
 /** Senha do banco de dados MySQL */
-define('DB_PASSWORD', '5Sm1RPQe3UUJx08s');
+define('DB_PASSWORD', '');
 
 /** Nome do host do MySQL */
-define('DB_HOST', 'mysql.futfanatics.com.br');
+define('DB_HOST', 'localhost');
 
 /** Charset do banco de dados a ser usado na criação das tabelas. */
 define('DB_CHARSET', 'utf8mb4');
