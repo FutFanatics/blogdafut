@@ -8,7 +8,9 @@ if (strpos(get_category_parents(get_queried_object_id()), 'News/') !== false) {
     <section id="posts">
         <div class="container">
             <div class="name-category">
-                <h1><?php single_cat_title(); ?></h1>
+                <h1>
+                    <span class="icon-category"><?= getIconCategory(get_queried_object_id()) ?></span>    
+                <?php single_cat_title(); ?></h1>
             </div>
         </div>      
 
@@ -160,84 +162,86 @@ if (strpos(get_category_parents(get_queried_object_id()), 'News/') !== false) {
 
             </div>
         </section>
+       
+        <?php  $args = array(
+            'post_type' => 'post',
+            'meta_key' => '_campo_destaque',
+            'meta_value' => 'sim',
+            'posts_per_page' => 4,
+            'cat' => get_queried_object_id(),
+        );
 
-        <section id="destaque">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 title-section-home">
-                        <h3>Destaques</h3>
-                        <div class="line-divisor"></div>
+        if (empty(get_posts($args))) {
+            unset($args['cat']);
+        }?>
+
+        <?php if(!empty(get_posts($args))){ ?>
+            <section id="destaque">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 title-section-home">
+                            <h3>Destaques</h3>
+                            <div class="line-divisor"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row box-destaque">
-                    <?php
-                    $args = array(
-                        'post_type' => 'post',
-                        'meta_key' => '_campo_destaque',
-                        'meta_value' => 'sim',
-                        'posts_per_page' => 4,
-                        'cat' => get_queried_object_id(),
-                    );
+                    <div class="row box-destaque">
+                        <?php
+                        $my_query = new WP_Query($args);
 
-                    if (empty(get_posts($args))) {
-                        unset($args['cat']);
-                    }
+                        while ($my_query->have_posts()) : $my_query->the_post();
 
-                    $my_query = new WP_Query($args);
+                            $post_thumbnail_id = get_post_thumbnail_id($post->ID);
 
-                    while ($my_query->have_posts()) : $my_query->the_post();
+                            $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
+                        ?>
 
-                        $post_thumbnail_id = get_post_thumbnail_id($post->ID);
+                            <div class="col-md-3 col-sm-6 col-xs-12 destaque-itens">
+                                <div class="thumbnail">
 
-                        $post_thumbnail_url = wp_get_attachment_url($post_thumbnail_id);
-                    ?>
-
-                        <div class="col-md-3 col-sm-6 col-xs-12 destaque-itens">
-                            <div class="thumbnail">
-
-                                <a href="<?php the_permalink(); ?>">
-                                    <div class="img-thumb" style="background-image: url(<?= $post_thumbnail_url; ?>);"></div>
-                                </a>
-
-                                <div class="caption">
                                     <a href="<?php the_permalink(); ?>">
-                                        <h3><?php the_title(); ?></h3>
+                                        <div class="img-thumb" style="background-image: url(<?= $post_thumbnail_url; ?>);"></div>
                                     </a>
-                                </div>
 
-                                <div class="footer-post">
-                                    <div class="counter-post-view-home">
-                                        <small>
-                                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.74316 6C6.36816 6 6.89941 5.78125 7.33691 5.34375C7.77441 4.90625 7.99316 4.375 7.99316 3.75C7.99316 3.125 7.77441 2.59375 7.33691 2.15625C6.89941 1.71875 6.36816 1.5 5.74316 1.5C5.11816 1.5 4.58691 1.71875 4.14941 2.15625C3.71191 2.59375 3.49316 3.125 3.49316 3.75C3.49316 4.375 3.71191 4.90625 4.14941 5.34375C4.58691 5.78125 5.11816 6 5.74316 6ZM5.74316 5.1C5.36816 5.1 5.04941 4.96875 4.78691 4.70625C4.52441 4.44375 4.39316 4.125 4.39316 3.75C4.39316 3.375 4.52441 3.05625 4.78691 2.79375C5.04941 2.53125 5.36816 2.4 5.74316 2.4C6.11816 2.4 6.43691 2.53125 6.69941 2.79375C6.96191 3.05625 7.09316 3.375 7.09316 3.75C7.09316 4.125 6.96191 4.44375 6.69941 4.70625C6.43691 4.96875 6.11816 5.1 5.74316 5.1ZM5.74316 7.5C4.5265 7.5 3.41816 7.16042 2.41816 6.48125C1.41816 5.80208 0.693164 4.89167 0.243164 3.75C0.693164 2.60833 1.41816 1.69792 2.41816 1.01875C3.41816 0.339583 4.5265 0 5.74316 0C6.95983 0 8.06816 0.339583 9.06816 1.01875C10.0682 1.69792 10.7932 2.60833 11.2432 3.75C10.7932 4.89167 10.0682 5.80208 9.06816 6.48125C8.06816 7.16042 6.95983 7.5 5.74316 7.5ZM5.74316 6.5C6.68483 6.5 7.54941 6.25208 8.33691 5.75625C9.12441 5.26042 9.7265 4.59167 10.1432 3.75C9.7265 2.90833 9.12441 2.23958 8.33691 1.74375C7.54941 1.24792 6.68483 1 5.74316 1C4.8015 1 3.93691 1.24792 3.14941 1.74375C2.36191 2.23958 1.75983 2.90833 1.34316 3.75C1.75983 4.59167 2.36191 5.26042 3.14941 5.75625C3.93691 6.25208 4.8015 6.5 5.74316 6.5Z" fill="#192C53" />
-                                            </svg>
-
-                                            <?= getPostViews(get_the_ID()); ?>
-                                        </small>
+                                    <div class="caption">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <h3><?php the_title(); ?></h3>
+                                        </a>
                                     </div>
 
+                                    <div class="footer-post">
+                                        <div class="counter-post-view-home">
+                                            <small>
+                                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.74316 6C6.36816 6 6.89941 5.78125 7.33691 5.34375C7.77441 4.90625 7.99316 4.375 7.99316 3.75C7.99316 3.125 7.77441 2.59375 7.33691 2.15625C6.89941 1.71875 6.36816 1.5 5.74316 1.5C5.11816 1.5 4.58691 1.71875 4.14941 2.15625C3.71191 2.59375 3.49316 3.125 3.49316 3.75C3.49316 4.375 3.71191 4.90625 4.14941 5.34375C4.58691 5.78125 5.11816 6 5.74316 6ZM5.74316 5.1C5.36816 5.1 5.04941 4.96875 4.78691 4.70625C4.52441 4.44375 4.39316 4.125 4.39316 3.75C4.39316 3.375 4.52441 3.05625 4.78691 2.79375C5.04941 2.53125 5.36816 2.4 5.74316 2.4C6.11816 2.4 6.43691 2.53125 6.69941 2.79375C6.96191 3.05625 7.09316 3.375 7.09316 3.75C7.09316 4.125 6.96191 4.44375 6.69941 4.70625C6.43691 4.96875 6.11816 5.1 5.74316 5.1ZM5.74316 7.5C4.5265 7.5 3.41816 7.16042 2.41816 6.48125C1.41816 5.80208 0.693164 4.89167 0.243164 3.75C0.693164 2.60833 1.41816 1.69792 2.41816 1.01875C3.41816 0.339583 4.5265 0 5.74316 0C6.95983 0 8.06816 0.339583 9.06816 1.01875C10.0682 1.69792 10.7932 2.60833 11.2432 3.75C10.7932 4.89167 10.0682 5.80208 9.06816 6.48125C8.06816 7.16042 6.95983 7.5 5.74316 7.5ZM5.74316 6.5C6.68483 6.5 7.54941 6.25208 8.33691 5.75625C9.12441 5.26042 9.7265 4.59167 10.1432 3.75C9.7265 2.90833 9.12441 2.23958 8.33691 1.74375C7.54941 1.24792 6.68483 1 5.74316 1C4.8015 1 3.93691 1.24792 3.14941 1.74375C2.36191 2.23958 1.75983 2.90833 1.34316 3.75C1.75983 4.59167 2.36191 5.26042 3.14941 5.75625C3.93691 6.25208 4.8015 6.5 5.74316 6.5Z" fill="#192C53" />
+                                                </svg>
+
+                                                <?= getPostViews(get_the_ID()); ?>
+                                            </small>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php endwhile; ?>
-                </div>
+                        <?php endwhile; ?>
+                    </div>
 
-                <div class="row box-pesquisa">
-                    <div class="col-md-12">
-                        <div id="inner-sidebar" class="inner-content-wrap">
-                            <form action="https://blog.futfanatics.com.br/" method="get" accept-charset="utf-8" id="searchform" role="search">
-                                <div class="relative-form">
-                                    <input type="text" placeholder="Procure por posts" name="s" id="s" value="">
-                                    <button type="submit" id="searchsubmit"><i class="glyphicon glyphicon-search"></i></button>
-                                </div>
-                            </form>
+                    <div class="row box-pesquisa">
+                        <div class="col-md-12">
+                            <div id="inner-sidebar" class="inner-content-wrap">
+                                <form action="https://blog.futfanatics.com.br/" method="get" accept-charset="utf-8" id="searchform" role="search">
+                                    <div class="relative-form">
+                                        <input type="text" placeholder="Procure por posts" name="s" id="s" value="">
+                                        <button type="submit" id="searchsubmit"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
-        </section>
+                </div>
+            </section>
+        <?php } ?>
 
         <section id="posts" class="post-page-category">
 

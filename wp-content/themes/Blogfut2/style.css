@@ -232,14 +232,16 @@ body.home{
 
     .menu-mobile {
         top: 52px;
-        height: 100%;
+        padding-bottom: 15px;
+        height: fit-content;
         position: fixed;
-        right: 100%;
         width: 100%;
         transition: 1s all;
         color: #ffff;
         background-color: #192C53;
         z-index: 10;
+        border-radius: 0px 0px 16px 16px;
+        opacity: 0;
     }
 
     .menu-mobile a{
@@ -537,19 +539,18 @@ h2.widget-title {
 #posts .box-ultimos-posts .posts-itens .thumbnail .img-thumb{
     border-radius: 8px;
     position: relative;
-    background-size: 100%;
     background-position: center center;
     height: 230px;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
 }
 
 #destaque .box-destaque .destaque-itens .thumbnail .img-thumb:hover,
 #posts .box-ultimos-posts .posts-itens .thumbnail .img-thumb:hover{
-    background-size: 110% 110%;
+    background-size: 170% 115%;
 }
 
 #destaque .box-destaque .destaque-itens .thumbnail .caption,
@@ -716,6 +717,11 @@ body.search #posts .init-posts article .thumbnail .footer-post .counter-post-vie
     font-size: 14px;
 }
 
+#posts-categorys .post-category-box .post-category-item:first-child .post-thumbnail a .img-thumb{
+    background-size: cover;
+    background-position: center;
+}
+
 #posts-categorys .post-category-box .post-category-item:not(:first-child){
     display: flex;
     align-items: center;
@@ -738,6 +744,8 @@ body.search #posts .init-posts article .thumbnail .footer-post .counter-post-vie
     overflow: hidden;
     min-width: 80px;
 }
+
+
 
 #posts-categorys .post-category-box .post-category-item:not(:first-child) .post-thumbnail a{
     width: 100%;
@@ -1082,7 +1090,15 @@ footer .media-body,
     color: #121135;
     padding-top: 35px;
     margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
+
+.name-category h1 span svg{
+    height: 32px;
+    width: 32px;
+}   
 
 .init-posts {
     margin-top: 40px;
@@ -1251,7 +1267,7 @@ footer .media-body,
 h3.comentario-antes-face {
     font-family: GothamBlack;
     font-size: 24px;
-    color: #21222D;
+    color: #121135;
     margin-top: 30px;
     text-align: center;
 }
@@ -1363,14 +1379,16 @@ footer .diretrizes{
 
     .menu-mobile {
         top: 52px;
-        height: 100%;
+        height: fit-content;
+        padding-bottom: 15px;
         position: fixed;
-        right: 100%;
         width: 100%;
         transition: 1s all;
         color: #ffff;
         background-color: #192C53;
         z-index: 10;
+        border-radius: 0px 0px 16px 16px;
+        opacity: 0;
     }
 
     .menu-mobile a{
@@ -1445,6 +1463,11 @@ footer .diretrizes{
 
 @media screen and (max-width: 360px){}
 
+
+.menu-mobile.visible-xs.menu-open{
+    opacity: 1;
+    transition: opacity 0.4s;
+}
 
 /* Sobre */
 #sobre .box-sobre{
@@ -1581,7 +1604,7 @@ footer .diretrizes{
 
 #newsletter .box-newletter .box-newletter-content input[type="submit"]{
     width: 248px;
-    margin: 0px auto 0;
+    margin: 20px auto 0;
     background-color: #192c53;
     color: #FFFFFF;
     border-radius: 50px;
@@ -1803,10 +1826,15 @@ body.category #posts #posts.post-page-category {
     display: none;
 }
 
+
 .paginacao-style .wp-pagenavi{
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.paginacao-style .wp-pagenavi a.first, .paginacao-style .wp-pagenavi a.last{
+    display: none !important;
 }
 
 .paginacao-style .wp-pagenavi > span, .paginacao-style .wp-pagenavi > a:not(.nextpostslink):not(.previouspostslink){
@@ -1837,6 +1865,11 @@ body.category #posts #posts.post-page-category {
 
     .paginacao-style .wp-pagenavi{
         gap: 6px;
+    }
+
+    .slick-next{
+        right: 10px !important;
+        display: none !important;
     }
 }
 
@@ -1925,6 +1958,17 @@ body.category #posts #posts.post-page-category {
 }
 
 @media (max-width: 580px) {
+
+    #posts.page-noticia{
+        margin-top: 100px;
+    }
+
+    #posts.page-noticia #single-post h1 a{
+        font-size: 16px;
+        line-height: 19.2px;
+        text-align: center;
+    }
+
     #posts.page-noticia #single-post .post-content .wp-block-image img{
         width: 100% !important;
         height: auto !important;

@@ -443,7 +443,7 @@
 <section id="newsletter">
     <div class="container">
 
-        <form class="formIntegration formIntegration2 " accept-charset="UTF-8" method="post" onsubmit="return dinForms.ValidateForm(this)" action="https://receiver.emkt.dinamize.com/in/301603/1/73cfd/0" target="DinamizeIframeFormIntegration" data-name="Rm9ybXVsw6FyaW8gR2VyYWwgLSBMZWFkcyBCbG9nIHYuMQ==">
+        <form class="formIntegration formIntegration2" accept-charset="UTF-8" method="post" onsubmit="return dinForms.ValidateForm(this)" action="https://receiver.emkt.dinamize.com/in/301603/1/73cfd/0" target="DinamizeIframeFormIntegration" data-name="QmxvZ18yMDI1==">
 
             <div class="box-newletter">
                 <div class="box-newletter-img">
@@ -472,16 +472,8 @@
                         <div class="block">
                             <input type="text" name="cmp1" placeholder="E-mail" format="" class="type_EMAIL field-required  input-field" maxlength="80" />
                         </div>
-                        <div class="block">
-                            <select name="cmp8" class="type_LVU field-required input-field ">
-                                <option value="" disabled selected>Sexo</option>
-                                <option value="Feminino">Feminino</option>
-                                <option value="Masculino">Masculino</option>
-                            </select>
-                        </div>
-                        <div class="block">
-                            <input type="text" name="cmp9" din-mask-type="DT" placeholder="Data de Aniversário" format="DD/MM/AAAA" class="type_DT field-required din-input-mask input-field" maxlength="10" />
-                        </div>
+
+
                         <div class="block">
                             <select name="cmp12" class="type_LVM">
                                 <option value="" disabled selected>Time Brasileiro</option>
@@ -798,63 +790,6 @@
                                 <option value="Zenit">Zenit</option>
                             </select>
                         </div>
-
-                        <div class="block">
-                            <select name="cmp14" class="type_LVM">
-                                <option value="" disabled selected>Esportes que me interesso</option>
-                                <option value="Artes Marciais">Artes Marciais</option>
-                                <option value="Automobilismo">Automobilismo</option>
-                                <option value="Aventura">Aventura</option>
-                                <option value="Basquete">Basquete</option>
-                                <option value="Beisebol">Beisebol</option>
-                                <option value="Bike">Bike</option>
-                                <option value="Caminhada">Caminhada</option>
-                                <option value="Corrida">Corrida</option>
-                                <option value="Crossfit">Crossfit</option>
-                                <option value="Futebol">Futebol</option>
-                                <option value="Futebol Americano">Futebol Americano</option>
-                                <option value="Futebol Society">Futebol Society</option>
-                                <option value="Futsal">Futsal</option>
-                                <option value="Handebol">Handebol</option>
-                                <option value="Musculação">Musculação</option>
-                                <option value="Natação">Natação</option>
-                                <option value="Nenhum">Nenhum</option>
-                                <option value="Outro">Outro</option>
-                                <option value="Rugby">Rugby</option>
-                                <option value="Selecione">Selecione</option>
-                                <option value="Skate">Skate</option>
-                                <option value="Tennis">Tennis</option>
-                                <option value="Todos os Esportes da Lista">Todos os Esportes da Lista</option>
-                                <option value="Vôlei">Vôlei</option>
-                            </select>
-                        </div>
-
-                        <div class="block">
-                            <select name="cmp15" class="type_LVM">
-                                <option value="" disabled selected>Me interesso por</option>
-                                <option value="Acessórios de proteção">Acessórios de proteção</option>
-                                <option value="Artigos para árbitros">Artigos para árbitros</option>
-                                <option value="Artigos para goleiros">Artigos para goleiros</option>
-                                <option value="Bermudas">Bermudas</option>
-                                <option value="Bolas e acessórios">Bolas e acessórios</option>
-                                <option value="Bolsas e mochilas">Bolsas e mochilas</option>
-                                <option value="Bonés e gorros">Bonés e gorros</option>
-                                <option value="Camisas de seleções">Camisas de seleções</option>
-                                <option value="Camisas de time">Camisas de time</option>
-                                <option value="Chuteiras">Chuteiras</option>
-                                <option value="Combos promocionais">Combos promocionais</option>
-                                <option value="Fardamentos para times">Fardamentos para times</option>
-                                <option value="Jaquetas e moletons">Jaquetas e moletons</option>
-                                <option value="Moda casual">Moda casual</option>
-                                <option value="Nenhum">Nenhum</option>
-                                <option value="Novidades">Novidades</option>
-                                <option value="Outro">Outro</option>
-                                <option value="Personalização Grátis">Personalização Grátis</option>
-                                <option value="Promoções">Promoções</option>
-                                <option value="Roupas para treino">Roupas para treino</option>
-                                <option value="Tênis">Tênis</option>
-                            </select>
-                        </div>
                     </div>
 
                     <div class="box-politica-privacidade">
@@ -1013,6 +948,7 @@
                     }
                 }
 
+                //
                 var referer = document.referrer ? document.referrer.match(/:\/\/(.[^/]+)/)[1] : "";
                 var hostname = window.location.hostname;
                 if (referer != hostname) {
@@ -1027,6 +963,9 @@
             ValidateForm: function(form) {
                 this.LimpaAvisos(form);
 
+                /********************************************************/
+                // validação de cada tipo de campo
+                /********************************************************/
                 var elem = form.elements;
                 var enviar = true;
                 for (var i = 0; i < elem.length; i++) {
@@ -1120,7 +1059,10 @@
                     }
 
                 }
-
+                /********************************************************/
+                // Em caso de falha na validação...
+                // Mensagem de Campo Obrigatório
+                /********************************************************/
                 if (!enviar) {
                     var msgError = form.getElementsByClassName("DinamizeDivMessageError")[0];
                     if (msgError && msgError.innerHTML.length) {
@@ -1129,6 +1071,11 @@
                     return false
                 }
 
+                /********************************************************/
+                // Escreve valores nos campos hidden (quando necessário)
+                /********************************************************/
+
+                // Listas de Valores Multiplos (LVM)
                 var lvmElements = form.getElementsByClassName("type_LVM");
                 var checkboxes, checkedValues;
                 var hdName;
@@ -1149,20 +1096,34 @@
                     form.elements[lvmElements[i].getAttribute("hd-name")].value = checkedValues;
                 }
 
+                // Datas
                 this.setDateValues(form, "type_DT");
                 this.setDateValues(form, "type_DH");
 
+                // Floats
                 var fltElements = form.getElementsByClassName("type_FLT");
                 for (var i = 0; i < fltElements.length; i++) {
                     form.elements[fltElements[i].getAttribute("hd-name")].value = fltElements[i].value.replace(",", ".");
                 };
 
+                /********************************************************/
+                // finalizando...
+                /********************************************************/
+
+                //  se for preview... dá msg de sucesso e cai fora!
                 var isPreview = form.elements["isPreview"];
                 if (isPreview) {
                     dinForms.ResetFormValues(form);
                     return false
                 }
 
+                // LEADTRACKER
+                // Precisamos descobrir se o objeto de leadTracker existe no mesmo frame que este formulário está, ou se está no parent (ou no top).
+                // Usamos a referencia deste frame a partir disto.
+                // Para ter o máximo de compatibilidade, verifico se o browser suporta estes objetos.
+                // Resolve idealmente o uso de leadtracker por popups
+
+                // faz try-catch pois o frame parent/top pode ser de outro dominio, isto gerará um erro do tipo cross-domain.
                 try {
                     var frame
                     if (typeof dinLeadTracker !== "undefined") {
@@ -1589,7 +1550,7 @@
             }
         };
     }
-
+    
     if (document.readyState === "complete") {
         dinForms.onLoad();
     } else {
