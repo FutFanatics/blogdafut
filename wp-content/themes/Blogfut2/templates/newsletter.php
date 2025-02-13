@@ -443,7 +443,7 @@
 <section id="newsletter">
     <div class="container">
 
-        <form class="formIntegration formIntegration2" accept-charset="UTF-8" method="post" onsubmit="return dinForms.ValidateForm(this)" action="https://receiver.emkt.dinamize.com/in/301603/1/73cfd/0" target="DinamizeIframeFormIntegration" data-name="QmxvZ18yMDI1==">
+    <form version="2.0" class="formIntegration formIntegration2 " accept-charset="UTF-8" method="post" onsubmit="return dinForms.ValidateForm(this)" action="https://receiver.emkt.dinamize.com/in/301603/1/73cfd/0" target="DinamizeIframeFormIntegration" data-name="QmxvZ18yMDI1">
 
             <div class="box-newletter">
                 <div class="box-newletter-img">
@@ -456,15 +456,19 @@
                     <h3><?= (esc_html(get_option('newsletter_titulo'))) ?? 'Assine nossa Newsletter!'; ?></h3>
 
                     <input type="hidden" name="update_mode" value="AS" />
-                    <input type="hidden" name="form-code" value="44" />
+                    <input type="hidden" name="form-code" value="163" />
                     <input type="hidden" name="isMsg" value="true" />
+
                     <div class="DinamizeDivCaptchaMessage">Captcha obrigatório</div>
                     <div class="DinamizeDivMessageAlert"></div>
                     <div class="DinamizeDivMessageSuccess">Seu e-mail foi cadastrado com sucesso!</div>
                     <div class="DinamizeDivMessageError"></div>
                     <input type="hidden" name="text-confirmation" value="U2V1IGUtbWFpbCBmb2kgY2FkYXN0cmFkbyBjb20gc3VjZXNzbyE=" />
                     <input type="hidden" name="text-error" value="" />
-                    <input type="hidden" name="text-alert" value="" /><input type="hidden" name="cmp4" value="BlogFut_FormGeral" /><input type="hidden" name="phase-change" value="off" />
+                    <input type="hidden" name="text-alert" value="" />
+                    <input type="hidden" name="cmp4" value="form_blog_2025" />
+                    <input type="hidden" name="phase-change" value="off" />
+
                     <div class="">
                         <div class="block">
                             <input type="text" name="cmp2" placeholder="Nome" format="" class="type_VC field-required  input-field" maxlength="80" />
@@ -475,7 +479,7 @@
 
 
                         <div class="block">
-                            <select name="cmp12" class="type_LVM">
+                            <select name="cmp12" class="type_LVM" hd-name="cmp12">
                                 <option value="" disabled selected>Time Brasileiro</option>
 
                                 <option value="ABC de Natal">ABC de Natal</option>
@@ -587,7 +591,7 @@
 
                         <div class="block">
 
-                            <select name="cmp13" class="type_LVM">
+                            <select name="cmp13" class="type_LVM" hd-name="cmp13">
                                 <option value="" disabled selected>Time Internacional</option>
                                 <option value="AEK Atenas">AEK Atenas</option>
                                 <option value="Ajaccio">Ajaccio</option>
@@ -797,8 +801,8 @@
                         <label for="ck-politica-privacidade">Li e concordo com a <a href="https://www.futfanatics.com.br/politica-de-privacidade" target="_blank">Política de Privacidade</a></label>
                     </div>
 
-                    <div class="vertical class1 submit submit-button-td" style="text-align: center;">
-                        <input type="submit" value="Inscreva-me" original-value="Inscreva-me" class="dinSubmit submit-btn" />
+                    <div class="horizontal class1 submit submit-button-td" style="text-align: center;">
+                        <input type="submit" value="Cadastre-se" original-value="Inscreva-me" class="dinSubmit submit-btn" />
                         <div class="spinner">
                             <div class="bounce1"></div>
                             <div class="bounce2"></div>
