@@ -6,6 +6,8 @@
 
             <?php while (have_posts()) : the_post();?>
 
+                <?php setPostViews(get_the_ID()); ?>
+
                 <article class="post standard col12" id="single-post">
                     <div class="post-header">
                         <div class="post-interno">
