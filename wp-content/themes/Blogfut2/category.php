@@ -18,9 +18,17 @@ if (strpos(get_category_parents(get_queried_object_id()), 'News/') !== false) {
             <div class="container">
                 <div class="row">
                     <?php
+
+                    $category_id = get_queried_object_id();
+                  
                     global $post;
 
-                    $myPosts = get_posts(array('tag' => 'destaque'));
+                    $myPosts = get_posts(array(
+                        'category' => $category_id,
+                        'numberposts' => 3,
+                        'orderby' => 'date',
+                        'order' => 'DESC'
+                    ));
 
                     setup_postdata($myPosts[0]);
 
@@ -164,7 +172,7 @@ if (strpos(get_category_parents(get_queried_object_id()), 'News/') !== false) {
         </section>
        
         <section id="destaque">
-            <div class="container">                
+            <div class="container">
                 <div class="row box-pesquisa">
                     <div class="col-md-12">
                         <div id="inner-sidebar" class="inner-content-wrap">
@@ -177,7 +185,6 @@ if (strpos(get_category_parents(get_queried_object_id()), 'News/') !== false) {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -199,8 +206,9 @@ if (strpos(get_category_parents(get_queried_object_id()), 'News/') !== false) {
                         <?php
                         $args = array(
                             'tag__not_in' => 2,
+                            'post__not_in' => array($myPosts[0]->ID, $myPosts[1]->ID, $myPosts[2]->ID),
                             'posts_per_page' => 8,
-                            'category__not_in' => array(get_queried_object_id()),
+                            'category__in' => array(get_queried_object_id()),
                             'order' => 'DESC',
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1
                         );

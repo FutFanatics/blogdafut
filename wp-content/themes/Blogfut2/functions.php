@@ -812,6 +812,7 @@ function exibir_pagina_newsletter() {
 
 function registrar_configuracoes_newsletter() {
     register_setting('newsletter_options_group', 'newsletter_titulo');
+    register_setting('newsletter_options_group', 'newsletter_link');
     register_setting('newsletter_options_group', 'newsletter_imagem', 'handle_file_upload');
 
     add_settings_section(
@@ -825,6 +826,14 @@ function registrar_configuracoes_newsletter() {
         'newsletter_titulo',
         'Título da Newsletter',
         'exibir_campo_newsletter_titulo',
+        'newsletter',
+        'newsletter_section'
+    );
+
+    add_settings_field(
+        'newsletter_link',
+        'Link da Newsletter',
+        'exibir_campo_newsletter_link',
         'newsletter',
         'newsletter_section'
     );
@@ -844,6 +853,11 @@ function exibir_campo_newsletter_titulo() {
     echo '<input type="text" name="newsletter_titulo" value="' . esc_attr($newsletter_titulo) . '" class="regular-text" />';
 }
 
+function exibir_campo_newsletter_link(){
+    $newsletter_link = get_option('newsletter_link');
+    echo '<input type="text" name="newsletter_link" value="' . esc_attr($newsletter_link) . '" class="regular-text" />';
+}
+
 function exibir_campo_newsletter_imagem() {
     $newsletter_imagem = get_option('newsletter_imagem');
     echo '<input type="file" name="newsletter_imagem" />';
@@ -854,15 +868,18 @@ function exibir_campo_newsletter_imagem() {
 }
 
 function handle_file_upload($option) {
-    if (!empty($_FILES['newsletter_imagem']['tmp_name'])) {
+
+    if(!empty($_FILES['newsletter_imagem']['tmp_name'])) {
         $urls = wp_handle_upload($_FILES['newsletter_imagem'], array('test_form' => false));
         $temp = $urls['url'];
         return $temp;
     }
+
     if (isset($_POST['remover_newsletter_imagem']) && $_POST['remover_newsletter_imagem'] == '1') {
         return '';
     }
-    return get_option($option);
+
+    return get_option('newsletter_imagem');
 }
 
 function enqueue_slick_slider() {
@@ -871,8 +888,8 @@ function enqueue_slick_slider() {
     wp_enqueue_script('slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), null, true);
     wp_enqueue_script('custom-slick-js', get_template_directory_uri() . '/js/custom-slick.js', array('slick-js'), null, true);
 }
-add_action('wp_enqueue_scripts', 'enqueue_slick_slider');
 
+add_action('wp_enqueue_scripts', 'enqueue_slick_slider');
 
 function getIconCategory($category = 0){
 

@@ -447,8 +447,17 @@
 
             <div class="box-newletter">
                 <div class="box-newletter-img">
-                    <?php if ($imagem_url = get_option('newsletter_imagem')): ?>
-                        <img src="<?= esc_url($imagem_url); ?>" alt="Imagem da Newsletter" />
+
+                    <?php if($link_url = get_option('newsletter_link')): ?>
+                        <a href="<?= esc_url($link_url); ?>" target="_blank">
+                    <?php endif; ?>
+
+                        <?php if ($imagem_url = get_option('newsletter_imagem')): ?>
+                            <img src="<?= esc_url($imagem_url); ?>" alt="Imagem da Newsletter" />
+                        <?php endif; ?>
+
+                    <?php if($link_url = get_option('newsletter_link')): ?>
+                        </a>
                     <?php endif; ?>
                 </div>
 

@@ -11,21 +11,29 @@
             <div class="container">
                 <div class="row">
                     <?php
-                    global $post;
 
-                    $myPosts = get_posts(array('tag' => 'destaque'));
+                        $$category_id = get_queried_object_id();
+                  
+                        global $post;
 
-                    setup_postdata($myPosts[0]);
+                        $myPosts = get_posts(array(
+                            'category' => $category_id,
+                            'numberposts' => 3,
+                            'orderby' => 'date',
+                            'order' => 'DESC'
+                        ));
 
-                    setup_postdata($myPosts[1]);
+                        setup_postdata($myPosts[0]);
 
-                    setup_postdata($myPosts[2]);
+                        setup_postdata($myPosts[1]);
 
-                    $image0 = wp_get_attachment_image_src(get_post_thumbnail_id($myPosts[0]->ID), 'single-post-thumbnail');
+                        setup_postdata($myPosts[2]);
 
-                    $image1 = wp_get_attachment_image_src(get_post_thumbnail_id($myPosts[1]->ID), 'single-post-thumbnail');
+                        $image0 = wp_get_attachment_image_src(get_post_thumbnail_id($myPosts[0]->ID), 'single-post-thumbnail');
 
-                    $image2 = wp_get_attachment_image_src(get_post_thumbnail_id($myPosts[2]->ID), 'single-post-thumbnail');
+                        $image1 = wp_get_attachment_image_src(get_post_thumbnail_id($myPosts[1]->ID), 'single-post-thumbnail');
+
+                        $image2 = wp_get_attachment_image_src(get_post_thumbnail_id($myPosts[2]->ID), 'single-post-thumbnail');
                     ?>
 
                     <div class="display-desktop-on">
@@ -184,6 +192,7 @@
                         <?php
                         $args = array(
                             'tag__not_in' => 2,
+                            'post__not_in' => array($myPosts[0]->ID, $myPosts[1]->ID, $myPosts[2]->ID),
                             'posts_per_page' => 12,
                             'order' => 'DESC',
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1
